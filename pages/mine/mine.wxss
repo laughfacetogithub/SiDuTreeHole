@@ -1,0 +1,183 @@
+@import '/pages/bottom_menu/bottom_menu';
+
+page {
+  height: 100%;
+  scrollbar-base-color: red;
+}
+
+.profily, .profily_header {
+  border-radius: 8px;
+}
+
+.center {
+  height: 100%;
+}
+
+.center_top {
+  height: 18%;
+  /* wxss不支持内容中插入图片 */
+  /* background: url("/images/static/header.jpg") no-repeat 0 50%; */
+  background-size: cover;
+  position: relative;
+}
+
+.center_top .mask {
+  position: absolute;
+  top: 0rpx;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+}
+
+.center_box_bg {
+  background: #f9f9f9;
+  position: relative;
+}
+
+.center_box_bg .profily {
+  position: absolute;
+  width: 90%;
+  margin: 0 auto;
+  top: -100rpx;
+  left: 5%;
+  background: #fefefe;
+  padding: 35rpx;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px #ededed;
+}
+
+.base {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  border-bottom: 2px solid #f6f6f6;
+  padding-bottom: 35rpx;
+  position: relative;
+}
+
+.base .profily_header {
+  position: relative;
+  height: 120rpx;
+  width: 120rpx;
+  background-size: 100%;
+}
+
+.base .profily_header::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f6f6f6 !important;
+  opacity: 0;
+}
+
+.base .profily_header:active::after {
+  opacity: 0.3;
+}
+
+.base text {
+  margin-left: 20px;
+  font-size: 30rpx;
+}
+
+.base image {
+  position: absolute;
+  height: 40rpx;
+  width: 40rpx;
+  right: 0;
+  top: 0;
+}
+
+.order_status {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  margin-top: 45rpx;
+}
+
+.order_status .status {
+  width: 140rpx;
+  font-size: 30rpx;
+  text-align: center;
+  letter-spacing: 0.5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.order_status .status .icon {
+  width: 55rpx;
+  height: 55rpx;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+
+.baiban {
+  background: #fefefe;
+  height: 300rpx;
+}
+
+.center_menu {
+  width: 100%;
+  display: inline-block;
+}
+
+.center_menu .menu_item {
+  font-size: 32rpx;
+  letter-spacing: 1px;
+  padding: 24px 5%;
+  background: #fefefe;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid #efefef;
+}
+
+.center_menu .menu_item:active {
+  background: #f6f6f6 !important;
+}
+
+.center_menu .menu_item::after {
+  content: "";
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 5%;
+  background-size: 100%;
+}
+
+.center_menu .menu_item text:nth-of-type(1) {
+  margin-left: 10px;
+}
+
+.center_menu .menu_item image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.center_menu .menu_item:nth-of-type(3) {
+  margin-top: 25px;
+}
+
+.block_park{
+  height: 9%;
+  width: 100%;
+}

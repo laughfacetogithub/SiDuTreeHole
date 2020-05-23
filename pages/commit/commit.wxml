@@ -1,0 +1,8 @@
+<!--pages/commit/commit.wxml-->
+<!-- <text>pages/commit/commit.wxml</text>
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button> -->
+
+<view class="textarea">
+  <textarea placeholder="可爱的你，发一条树洞吧~" placeholder-style="color: #888888; font-size: 38rpx;" class="textinput" maxlength="500" auto-focus="true" focus="true" cursor="66" bindinput="bindTextAreaBlur"></textarea>
+</view>
+<view id='btn' class="click" bindtap="send">发送</view>

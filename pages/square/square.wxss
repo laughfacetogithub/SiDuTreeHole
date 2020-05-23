@@ -1,0 +1,104 @@
+/* pages/square/square.wxss */
+@import '/pages/bottom_menu/bottom_menu';
+
+page {
+  background-color: #f1f7f2;
+}
+
+.scbg {
+  background-color: #efefef;
+  width: 96%;
+  height: 91%;
+  margin: auto;
+  border-radius:3rpx;
+  left: 0rpx;
+  right: 0rpx;
+  top: 0rpx;
+  position: absolute;
+}
+
+.box {
+  width: 100%;
+  background-color: white;
+  padding: 30rpx 3% auto;
+  border-bottom: 20rpx solid #efefef;
+}
+
+.firstblock {
+  height: 150rpx;
+  width: 92%;
+  margin: auto 4%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.touxiang{
+  width: 130rpx;
+  height: 130rpx;
+}
+.person{
+  width: 75%;
+  height: 130rpx;
+  margin-left: 30rpx;
+  margin-top: 10rpx;
+}
+.name {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10rpx;
+  font-size: 40rpx;
+  flex-direction: row;
+}
+.tel {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 35rpx;
+  flex-direction: row
+}
+.showname {
+  font-size: 34rpx;
+  color: #3F5185;
+  font-family: PingFangSC-regular;
+  font-weight: bold;
+}
+.showtime{
+  font-size: 25rpx;
+  color: #5e5d5d;
+  font-family: PingFangSC-regular;
+}
+.secondblock{
+  margin-top: 10rpx;
+  margin-left: 4%;
+  margin-right: 4%;
+  padding-bottom: 20rpx;
+  border-bottom: 5rpx solid #c4c1c1;
+  box-sizing: border-box;
+}
+.content {
+  font-size: 29rpx;
+  color: #101010;
+  margin-bottom: 20rpx;
+  word-break: break-all;
+}
+.thirdblock {
+  height: 100rpx;
+  margin: auto 4%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.like {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+.num{
+  height: 52rpx;
+  line-height: 50rpx;
+  margin-top: 25rpx;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color: #101010;
+}

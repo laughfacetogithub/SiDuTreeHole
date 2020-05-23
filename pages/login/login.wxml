@@ -1,0 +1,13 @@
+<!--pages/login/login.wxml-->
+<view class="page">
+  <view class="first userName">
+    <input placeholder="用户名/邮箱/手机号" placeholder-class="plas" class="inputs" type="text" bindinput="usernameInput"/>
+  </view>
+  <view class="second password">
+    <input placeholder="登录密码" placeholder-class="plas" class="inputs" type="password" bindinput="passwordInput"/>
+  </view>
+  <view class="click" bindtap="login" style="background-color:{{bgcolor}}; opacity: {{opacity}};">登录</view>
+  <view class="cha" bindtap="regist">
+    <text class="no">还没有账号？点我注册</text>
+  </view>
+</view>

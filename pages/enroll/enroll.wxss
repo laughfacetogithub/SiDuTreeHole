@@ -1,0 +1,72 @@
+/* pages/enroll/enroll.wxss */
+
+.page {
+  left: 0rpx;
+  right: 0rpx;
+  background-color: #f1f7f2;
+}
+
+.first {
+  width: 90%;
+  height: 100rpx;
+  margin: 80rpx 5% auto;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+}
+
+.plas {
+  font-size: 30rpx;
+  color: #ccc;
+}
+
+.inputs {
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: #000;
+  margin: auto;
+  margin-left: 20rpx;
+  width: 100%;
+}
+
+.second {
+  width: 90%;
+  height: 100rpx;
+  margin: 30rpx 5% auto;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+}
+
+.click {
+  width: 90%;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 30rpx 5% auto;
+  border-radius: 8rpx;
+  background-color: #f76968;
+  text-align: center;
+  color: white;
+  font-size: 33rpx;
+}
+.click:active {
+  opacity: 0.6!important;
+}
+.cha {
+  width: 90%;
+  height: 50rpx;
+  margin: 30rpx 5% auto;
+
+}
+
+.no {
+  color: black;
+  font-size: 28rpx;
+  font-family: PingFangSC-regualr;
+}
