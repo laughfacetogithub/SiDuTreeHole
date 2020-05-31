@@ -14,10 +14,15 @@ Page({
    */
   onLoad: function (options) {
     var avatarUrl = getApp().globalData.user.avatarUrl;
-    if (avatarUrl) {
+    if (avatarUrl != undefined) {
       this.setData({
         pri_img: avatarUrl,
         nickname: getApp().globalData.user.nickName
+      })
+    } else if(getApp().globalData.userInfo.avatarUrl != undefined){
+      this.setData({
+        pri_img: getApp().globalData.userInfo.avatarUrl,
+        nickname: getApp().globalData.userInfo.nickName
       })
     }
   },

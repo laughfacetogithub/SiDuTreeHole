@@ -49,16 +49,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    // console.log(getApp().globalData.userInfo.openid)
-    // console.log(getApp().globalData.userInfo.nickName)
-
     var avatarUrl = getApp().globalData.user.avatarUrl;
     if (avatarUrl != undefined) {
       this.setData({
         pri_img: avatarUrl,
         nickname: getApp().globalData.user.nickName
       })
-    }else {
+    } else if (getApp().globalData.userInfo.avatarUrl != undefined) {
       this.setData({
         pri_img: getApp().globalData.userInfo.avatarUrl,
         nickname: getApp().globalData.userInfo.nickName
@@ -168,10 +165,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    var avatarUrl = getApp().globalData.userInfo.avatarUrl;
-    if (avatarUrl) {
+    var avatarUrl = getApp().globalData.user.avatarUrl;
+    if (avatarUrl != undefined) {
       this.setData({
         pri_img: avatarUrl,
+        nickname: getApp().globalData.user.nickName
+      })
+    } else if (getApp().globalData.userInfo.avatarUrl != undefined) {
+      this.setData({
+        pri_img: getApp().globalData.userInfo.avatarUrl,
         nickname: getApp().globalData.userInfo.nickName
       })
     }
