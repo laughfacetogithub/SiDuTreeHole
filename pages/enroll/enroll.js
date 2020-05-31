@@ -9,6 +9,7 @@ Page({
   data: {
     bgcolor: "green",
     opacity: 1,
+
     username: "",
     phonenumber: "",
     password: "",
@@ -17,8 +18,8 @@ Page({
 
   regist: function(e) {
     var that = this;
-    var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
-    var mypsd = /^[A-Za-z][A-Za-z0-9]{6,16}$/;
+    var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;//正则表达式：检验手机号的合法性
+    var mypsd = /^[A-Za-z][A-Za-z0-9]{5,16}$/;//检验密码是否由字符和数字构成，有效的为6-16
     if (that.data.username == '') {
       wx.showModal({
         title: '提示',
@@ -87,13 +88,12 @@ Page({
         success(res) {}
       })
     } else {
-      console.log(this.data.username);
       wx.request({
-        url: getApp().globalData.server + 'home/user/user_enroll',
+        url: getApp().globalData.server + 'index.php/Home/User/enroll',
 
         data: {
           username: that.data.username,
-          phone: that.data.phone,
+          phone: that.data.phonenumber,
           password: that.data.password,
           password_again: that.data.passwordack,
           face_url: getApp().globalData.userInfo.avatarUrl,
@@ -103,7 +103,6 @@ Page({
           'content-type': 'application/x-www-form-urlencoded'
         },
         success(res) {
-          console.log(res.data)
           if (res.data.error_code == 1 || res.data.error_code == 2 || res.data.error_code == 3) {
             wx.showModal({
               title: '提示',
@@ -114,7 +113,7 @@ Page({
           } else if (res.data.error_code != 0) {
             wx.showModal({
               title: '哎呀',
-              content: '出错了呀',
+              content: '出错了妮',
               success(res) { }
             })
           } else if (res.data.error_code == 0) {

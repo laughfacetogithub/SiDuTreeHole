@@ -11,7 +11,7 @@ Page({
   next: function(e) {
     //console.log("userInfo", getApp().globalData.userInfo)
     wx.redirectTo({
-      url: '../login/login',
+      url: '../square/square',
     })
   },
 
@@ -37,9 +37,38 @@ Page({
                   success: (res) => {
                     getApp().globalData.userInfo = res.userInfo;
                     this.next();
+                    // console.log(getApp().globalData.userInfo)
                   }
                 })
               }
+              // console.log("这里" + getApp().globalData.userInfo)
+            }
+          })
+          //发起网络请求，通过code换取openid，session_key
+          wx.request({
+            url: getApp().globalData.server + 'index.php/Home/User/getOpenidByCode',
+            data: {
+              code: res.code,
+              avatarUrl: getApp().globalData.userInfo.avatarUrl,
+              nickName: getApp().globalData.userInfo.nickName
+            },
+            header: {
+              'content-type': 'application/json'
+            },
+            method: 'GET',
+            dataType: 'json',
+            responseType: 'text',
+            success: function(res) {
+              // console.log("success")
+              // console.log(res.data.data)
+              // console.log(getApp().globalData.userInfo.openid)
+              if (res.data.error_code == 3) {
+                getApp().globalData.user = res.data.data
+              }
+              // console.log(getApp().globalData.userInfo)
+            },
+            fail:function(res){
+              console.log("请求失败！")
             }
           })
         } else {
@@ -59,7 +88,7 @@ Page({
 
     } else {
       wx.redirectTo({
-        url: '../login/login',
+        url: '../square/square',
       })
     }
   },

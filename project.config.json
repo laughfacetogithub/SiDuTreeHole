@@ -102,6 +102,20 @@
 					"id": -1,
 					"name": "pages/square/square",
 					"pathName": "pages/square/square",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine_editMyself/mine_editMyself",
+					"pathName": "pages/mine_editMyself/mine_editMyself",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine_setting/mine_setting",
+					"pathName": "pages/mine_setting/mine_setting",
 					"scene": null
 				}
 			]

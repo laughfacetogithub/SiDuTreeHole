@@ -1,0 +1,22 @@
+<view class="base" bindtap="editMyself">
+  <view class="profily_header">
+    <image style="width: 120rpx; height: 120rpx;" src="{{pri_img}}"></image>
+  </view>
+  <text>{{nickname}}</text>
+  <view class="edit">编辑</view>
+</view>
+
+<view class="center">
+  <view class=" li">
+    <view class="address">do you want to save it</view>
+    <image src="../../images/jiantou.png"></image>
+  </view>
+  <view class="li">
+    <view class="screen">场景改变</view>
+    <image src="../../images/jiantou.png"></image>
+  </view>
+  <view class="li" bindtap="switchAccount">
+    <view class="switch">切换账号</view>
+    <image src="../../images/jiantou.png"></image>
+  </view>
+</view>

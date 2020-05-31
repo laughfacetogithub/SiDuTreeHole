@@ -1,0 +1,27 @@
+<!--pages/mine_editMyself/mine_editMyself.wxml-->
+<view class="center">
+  <view class="top">
+    <view class="base_top" bindtap="modify_avatar">
+      <view class="avatar">
+        <image src="{{imgSrc}}" mode="aspectFill"></image>
+      </view>
+      <text class="txt">更换头像</text>
+    </view>
+    <view class="save" bindtap="save_modify">保存</view>
+  </view>
+  <view class="con">
+    <view class="pros">
+      <view class="txt">思渡呢称</view>
+      <input placeholder="您还没有呢称" value="{{nickName}}" bindinput="modify_nickName"/>
+    </view>
+    <view class="pros">
+      <view class="txt">性别</view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+          <image src="../../images/jiantou.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+</view>

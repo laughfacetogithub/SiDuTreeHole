@@ -2,5 +2,7 @@
   "usingComponents": {},
   "navigationBarBackgroundColor": "#e1f3e6",
   "navigationBarTitleText": "思渡树洞",
-  "navigationBarTextStyle": "black"
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }

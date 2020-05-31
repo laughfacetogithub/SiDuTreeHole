@@ -1,4 +1,5 @@
 <!--pages/square/square.wxml-->
+
 <scroll-view class="scbg" scroll-y="true">
   <block wx:for="{{list}}" wx:for-item="itemName" wx:for-index="id">
     <view class="box">
@@ -17,15 +18,12 @@
         <text class="content">{{itemName.content}}</text>
       </view>
       <view class="thirdblock">
-        <image class="like" src="/images/tree.png"></image>
-        <text class="num">{{itemName.total_likes}}</text>
+        <text class="num" wx:if="{{itemName.total_likes != 0}}">{{itemName.total_likes}}</text>
+        <image class="like" src="{{itemName.islike ? '/images/treePlus3.png' : '/images/tree.png'}}" bindtap="like" id="{{itemName.id}}"></image>
       </view>
     </view>
   </block>
 </scroll-view>
 
-<text>/
-<br/></text>
-<text>/</text>
 <!-- 底部导航栏 -->
 <include src="/pages/bottom_menu/bottom_menu" />

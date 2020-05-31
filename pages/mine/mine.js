@@ -7,6 +7,8 @@ Page({
   data: {
     firco: "#979797",
     secco: "#000000",
+    pri_img: "../../images/static/header.jpg",
+    nickname: "您还没有登录",
     status: [{
         url: "/images/static/si.png",
         name: "思",
@@ -47,7 +49,74 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    // console.log(getApp().globalData.userInfo.openid)
+    // console.log(getApp().globalData.userInfo.nickName)
 
+    var avatarUrl = getApp().globalData.user.avatarUrl;
+    if (avatarUrl != undefined) {
+      this.setData({
+        pri_img: avatarUrl,
+        nickname: getApp().globalData.user.nickName
+      })
+    }else {
+      this.setData({
+        pri_img: getApp().globalData.userInfo.avatarUrl,
+        nickname: getApp().globalData.userInfo.nickName
+      })
+    }
+  },
+
+  modifyMyself: function(){
+    if (getApp().globalData.user.openid == undefined) {
+      wx.reLaunch({
+        url: '/pages/load/load'
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/mine_editMyself/mine_editMyself'
+      })
+    }
+  },
+
+  click_row: function(e){
+    console.log(e)
+    if(e.currentTarget.id == 1){
+      wx.navigateTo({
+        url: '/pages/mine_aboutUs/mine_aboutUs'
+      })
+    } else if (e.currentTarget.id == 2){
+      wx.navigateTo({
+        url: '/pages/mine_aboutUs/mine_aboutUs'
+      })
+    } else if (e.currentTarget.id == 3) {
+      wx.navigateTo({
+        url: '/pages/mine_aboutUs/mine_aboutUs'
+      })
+    } else if (e.currentTarget.id == 4) {
+      wx.navigateTo({
+        url: '/pages/mine_aboutUs/mine_aboutUs'
+      })
+    }
+  },
+  click_column: function (e) {
+    console.log(e)
+    if (e.currentTarget.id == 1) {
+      wx.navigateTo({
+        url: '/pages/mine_aboutUs/mine_aboutUs'
+      })
+    } else if (e.currentTarget.id == 2) {
+      wx.navigateTo({
+        url: '/pages/mine_aboutUs/mine_aboutUs'
+      })
+    } else if (e.currentTarget.id == 3) {
+      wx.navigateTo({
+        url: '/pages/mine_aboutUs/mine_aboutUs'
+      })
+    } else if (e.currentTarget.id == 4) {
+      wx.navigateTo({
+        url: '/pages/mine_aboutUs/mine_aboutUs'
+      })
+    }
   },
 
   treehole: function() {
@@ -80,6 +149,14 @@ Page({
       wx.hideLoading()
     }, 700)
   },
+
+  //设置
+  setting: function(){
+    wx.navigateTo({
+      url: '/pages/mine_setting/mine_setting',
+    })
+  },
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -91,7 +168,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    var avatarUrl = getApp().globalData.userInfo.avatarUrl;
+    if (avatarUrl) {
+      this.setData({
+        pri_img: avatarUrl,
+        nickname: getApp().globalData.userInfo.nickName
+      })
+    }
   },
 
   /**
@@ -112,17 +195,15 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-    console.log("xzxzxz")
-    setTimeout(function () {
+    setTimeout(function() {
       wx.stopPullDownRefresh()
-    },500);
+    }, 500);
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-
   },
 
   /**

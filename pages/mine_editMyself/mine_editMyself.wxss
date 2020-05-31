@@ -1,0 +1,82 @@
+/* pages/mine_editMyself/mine_editMyself.wxss */
+page {
+  background-color: #f7f7f7;
+}
+
+.center {
+  background-color: #ffffff;
+}
+
+.top{
+  padding: 40rpx 0;
+  text-align: center;
+  position: relative;
+}
+
+.avatar {
+  height: 135rpx;
+  width: 135rpx;
+  margin: auto;
+}
+
+.avatar image {
+  border-radius: 15rpx;
+  height: 100%;
+  width: 100%;
+}
+
+.top .txt {
+  font-size: 25rpx;
+  color: #f2844c;
+}
+
+.top .save {
+  position: absolute;
+  top: 10rpx;
+  right: 20rpx;
+  font-size: 30rpx;
+  color: #f2844c;
+}
+
+/* 个人属性 */
+.con{
+  padding-left:25rpx;
+}
+.pros {
+  padding-top: 13rpx;
+  padding-bottom: 13rpx;
+  border-top: 1px solid #f7f7f7;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+}
+
+.pros .txt {
+  color: #222222;
+  font-size: 30rpx;
+  margin-right: 20rpx;
+  width: 200rpx;
+}
+
+.pros .input-placeholder {
+  font-size: 28rpx;
+  color: #666666;
+}
+.pros input,.pros picker {
+  color : #695c21;
+  font-size: 28rpx;
+}
+
+.pros .picker {
+  width: 500rpx;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pros image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}

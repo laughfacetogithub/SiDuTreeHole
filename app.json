@@ -1,6 +1,9 @@
 {
   "pages": [
+    "pages/mine_editMyself/mine_editMyself",
     "pages/load/load",
+    "pages/mine_setting/mine_setting",
+    "pages/mine_aboutUs/mine_aboutUs",
     "pages/login/login",
     "pages/enroll/enroll",
     "pages/square/square",

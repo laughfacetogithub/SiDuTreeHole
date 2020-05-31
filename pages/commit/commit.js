@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    detail: "",
+    detail: "", //树洞的内容
   },
 
   bindTextAreaBlur: function(e) {
@@ -13,12 +13,62 @@ Page({
     //console.log(this.data.detail)
   },
   send: function(e) {
+    console.log(getApp().globalData)
+    var that = this;
     wx.showLoading({
-      title: '发送中',
+      title: '发送中'
     })
-    setTimeout(function(){
-      wx.hideLoading()
-    },1000)
+    if (!that.data.detail) {
+      wx.showModal({
+        title: '内容为空',
+        content: '您还没有输入任何东西，请输入后再提交'
+      })
+      wx.hideLoading();
+    } else {
+      wx.request({
+        url: getApp().globalData.server + 'index.php/Home/Message/publish_new_message',
+        data: {
+          user_id: getApp().globalData.user.user_id,
+          username: getApp().globalData.user.username,
+          face_url: getApp().globalData.user.face_url,
+          content: that.data.detail
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success(res) {
+          if (res.data.error_code != 0) {
+            wx.showModal({
+              title: '哎呀',
+              content: '出错了妮！'
+            })
+          } else if (res.data.error_code == 0) {
+            wx.showToast({
+              title: '发布树洞成功',
+              success(res) {
+                //没有什么动作
+                console.log("success!")
+              },
+              complete(res) {
+                wx.reLaunch({
+                  url: '../square/square'
+                })
+              }
+            })
+          }
+        },
+        fail(res) {
+          wx.showModal({
+            title: '哎呀',
+            content: '网络似乎不给力！'
+          })
+        },
+        complete(res) {
+          wx.hideLoading()
+        }
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载

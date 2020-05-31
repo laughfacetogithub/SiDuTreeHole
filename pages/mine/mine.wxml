@@ -1,18 +1,18 @@
   <view class="center">
   <view class="center_top">
-    <image src="/images/static/header.jpg" mode="aspectFill"></image>
+    <image src="{{pri_img}}" mode="aspectFill"></image>
     <view class="mask"></view>
   </view>
   <view class="center_box_bg">
     <view class="profily">
       <view class="base">
-        <view class="profily_header"><image style="width: 120rpx; height: 120rpx;" src="/images/static/header.jpg"></image></view>
-        <text>昵称</text>
-        <image src="../../images/static/setting.png" mode></image>
+        <view class="profily_header"  bindtap="modifyMyself"><image style="width: 120rpx; height: 120rpx;" src="{{pri_img}}"></image></view>
+        <text  bindtap="modifyMyself">{{nickname}}</text>
+        <image src="../../images/static/setting.png" bindtap="setting"></image>
       </view>
       <view class="order_status">
         <block wx:for="{{status}}" wx:for-item="item" wx:for-index="__i0__">
-          <view class="status">
+          <view class="status" id="{{__i0__ + 1}}" bindtap="click_row">
             <image class="icon" src="{{item.url}}" mode="aspectFill"></image>
             <text>{{item.name}}</text>
           </view>
@@ -22,7 +22,7 @@
     <view class="baiban"></view>
     <view class="center_menu">
       <block wx:for="{{menus}}" wx:for-item="item" wx:for-index="__i1__">
-        <view class="menu_item">
+        <view class="menu_item" id="{{__i1__ + 1}}" bindtap="click_column">
           <image src="{{item.icon}}" mode="aspectFill"></image>
           <text>{{item.name}}</text>
         </view>
